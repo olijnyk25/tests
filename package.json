@@ -1,0 +1,26 @@
+{
+  "name": "any",
+  "version": "1.0.0",
+  "description": "Automation tests on Protractor",
+  "main": "conf.js",
+  "dependencies": {
+    "xlsx": "^0.14.1"
+  },
+  "devDependencies": {
+    "protractor": "^5.4.2",
+    "jasmine-allure-reporter": "1.0.2",
+    "jasmine": "3.4.0",
+    "allure-commandline": "2.9.0"
+  },
+  "author": "Bohdan Oliinyk",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "webdriver-manager start",
+    "pretest": "rm -rf allure-report",
+    "test": "protractor conf.js",
+    "posttest": "allure generate allure-results --clean -o allure-report || true"
+  },
+  "directories": {
+    "test": "tests"
+  }
+}
